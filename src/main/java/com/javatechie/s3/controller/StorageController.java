@@ -1,6 +1,7 @@
 package com.javatechie.s3.controller;
 
 
+import com.javatechie.s3.config.UploadResponse;
 import com.javatechie.s3.service.StorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -17,9 +18,9 @@ public class StorageController {
     private StorageService service;
 
     @PostMapping("/upload")
-    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile multipart) {
+    public ResponseEntity<UploadResponse> uploadFile(@RequestParam("file") MultipartFile multipart) {
         if (multipart==null || multipart.isEmpty())
-            return new ResponseEntity<>("Please select file", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         return new ResponseEntity<>(service.uploadFile(multipart), HttpStatus.OK);
     }
 

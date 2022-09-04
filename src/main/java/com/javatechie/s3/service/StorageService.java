@@ -5,6 +5,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.IOUtils;
+import com.javatechie.s3.config.UploadResponse;
 import com.javatechie.s3.model.Image;
 import com.javatechie.s3.repository.ImageRepo;
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +36,7 @@ public class StorageService {
     @Autowired
     private AmazonS3 s3Client;
 
-    public String uploadFile(MultipartFile file) {
+    public UploadResponse uploadFile(MultipartFile file) {
         UUID uuid = UUID.randomUUID();
         String id =String.valueOf(uuid);
 
@@ -50,7 +51,7 @@ public class StorageService {
         image.setSize(String.valueOf(file.getSize()));
         image.setUrl(S3_FILE_UPLOAD_BASE_URL+fileName);
         String message = "";
-
+        UploadResponse response = null;
         try {
             System.out.println("Entered try block");
             File fileObj = convertMultiPartFileToFile(file);
@@ -59,13 +60,16 @@ public class StorageService {
             imageRepository.save(image);
             System.out.println("Image saved in repository");
             message = "File uploaded Successfully: " + fileName;
-            System.out.println("Exit try block");
+            response = new UploadResponse();
+            response.setUrl(image.getUrl());
+            response.setSize(image.getSize());
+            System.out.println(message + " . Exit try block");
         } catch (Exception ex) {
             System.out.println("Error uploading file: " + ex.getMessage());
             message = "Something Went Wrong";
-            return message;
+            return response;
         }
-        return message;
+        return response;
     }
 
 

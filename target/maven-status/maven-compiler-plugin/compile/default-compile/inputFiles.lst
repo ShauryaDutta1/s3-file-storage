@@ -2,5 +2,6 @@
 /home/unthinkable-lap-0111/Desktop/Personal Github/java-techie-S3-Bucket-Image-Upload/s3-file-storage-example/src/main/java/com/javatechie/s3/service/StorageService.java
 /home/unthinkable-lap-0111/Desktop/Personal Github/java-techie-S3-Bucket-Image-Upload/s3-file-storage-example/src/main/java/com/javatechie/s3/FileStorageServiceApplication.java
 /home/unthinkable-lap-0111/Desktop/Personal Github/java-techie-S3-Bucket-Image-Upload/s3-file-storage-example/src/main/java/com/javatechie/s3/config/StorageConfig.java
+/home/unthinkable-lap-0111/Desktop/Personal Github/java-techie-S3-Bucket-Image-Upload/s3-file-storage-example/src/main/java/com/javatechie/s3/config/UploadResponse.java
 /home/unthinkable-lap-0111/Desktop/Personal Github/java-techie-S3-Bucket-Image-Upload/s3-file-storage-example/src/main/java/com/javatechie/s3/repository/ImageRepo.java
 /home/unthinkable-lap-0111/Desktop/Personal Github/java-techie-S3-Bucket-Image-Upload/s3-file-storage-example/src/main/java/com/javatechie/s3/model/Image.java

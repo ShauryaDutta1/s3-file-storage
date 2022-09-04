@@ -5,3 +5,4 @@ com/javatechie/s3/config/StorageConfig.class
 com/javatechie/s3/controller/StorageController.class
 com/javatechie/s3/model/Image.class
 com/javatechie/s3/model/Image$ImageBuilder.class
+com/javatechie/s3/config/UploadResponse.class
