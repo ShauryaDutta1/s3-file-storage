@@ -1,0 +1,7 @@
+com/javatechie/s3/FileStorageServiceApplication.class
+com/javatechie/s3/service/StorageService.class
+com/javatechie/s3/repository/ImageRepo.class
+com/javatechie/s3/config/StorageConfig.class
+com/javatechie/s3/controller/StorageController.class
+com/javatechie/s3/model/Image.class
+com/javatechie/s3/model/Image$ImageBuilder.class

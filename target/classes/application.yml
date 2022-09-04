@@ -1,0 +1,47 @@
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIA27Z7QKCM576GJWMJ
+      secret-key: UGKk4oP2BXFrlKI2a6X43KUSd4dZmr7ZB/1rnAd8
+    region:
+      static: ap-south-1
+    stack:
+      auto: false
+
+application:
+  bucket:
+    name: sampleimages-12
+
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2MB
+      max-file-size: 5MB
+      max-request-size: 10MB
+  datasource:
+    url: jdbc:postgresql://notes.cotfkxjrfuvs.ap-south-1.rds.amazonaws.com/notes
+    username: postgres
+    password: notesapp123
+  jpa:
+    properties:
+      hibernate:
+        # Hibernate Properties
+        # The SQL dialect makes Hibernate generate better SQL for chosen database
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+aws:
+  s3:
+    image:
+      upload:
+        url: https://sampleimages-12.s3.ap-south-1.amazonaws.com/
+
+server:
+  port: 9090
+
